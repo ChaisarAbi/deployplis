@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 220 100% 97%; /* soft blue */
+    --foreground: 240 10% 10%; /* dark gray text */
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 10%;
+
+    --primary: 226 87% 55%; /* soft indigo */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 221 50% 94%; /* pastel blue */
+    --secondary-foreground: 240 10% 10%;
+
+    --muted: 210 16% 93%;
+    --muted-foreground: 210 16% 40%;
+
+    --accent: 210 100% 92%; /* light cyan */
+    --accent-foreground: 226 87% 30%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 16% 85%;
+    --input: 210 16% 85%;
+    --ring: 226 87% 55%;
+
+    --radius: 0.5rem;
+
+    /* sidebar */
+    --sidebar-background: 220 100% 97%;
+    --sidebar-foreground: 240 10% 10%;
+    --sidebar-primary: 226 87% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 100% 92%;
+    --sidebar-accent-foreground: 240 10% 10%;
+    --sidebar-border: 210 16% 85%;
+    --sidebar-ring: 226 87% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-gradient-to-tr from-[#e0f2fe] to-[#c7d2fe] text-foreground;
+  }
+  body {
+    @apply bg-gradient-to-br from-blue-50 to-indigo-100 text-foreground;
+  }
+}
