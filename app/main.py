@@ -15,6 +15,8 @@ import pandas as pd
 import json
 from typing import List, Optional
 import os
+from dotenv import load_dotenv
+
 
 from app.models import User, Dataset, Model, Prediction, Feedback
 from app.schemas import *
@@ -23,6 +25,7 @@ from app.ml_service import MLService
 from app.visualization import VisualizationService
 
 print("DEBUG MAIN: Base object imported:", Base) # Add this line to check Base object
+load_dotenv()
 
 # Create tables
 Base.metadata.create_all(bind=engine)

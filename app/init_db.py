@@ -2,6 +2,9 @@ from sqlalchemy.orm import Session
 from app.database import SessionLocal, engine
 from app.models import Base, User
 from app.auth import get_password_hash
+from dotenv import load_dotenv
+load_dotenv()
+
 
 # Create tables
 Base.metadata.create_all(bind=engine)
