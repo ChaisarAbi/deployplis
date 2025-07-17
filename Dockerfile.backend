@@ -21,4 +21,5 @@ RUN mkdir -p data models
 EXPOSE 8000
 
 # Jalankan init_db.py saat container start (bukan saat build)
-CMD ["bash", "-c", "python -m app.init_db && uvicorn app.main:app --host 0.0.0.0 --port 8000"]
+ENTRYPOINT bash -c "python -m app.init_db && uvicorn app.main:app --host 0.0.0.0 --port 8000"
+

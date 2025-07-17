@@ -33,8 +33,6 @@ Base.metadata.create_all(bind=engine)
 
 app = FastAPI(title="Walmart Sales Analysis API", version="1.0.0")
 
-app = FastAPI()
-
 @app.post("/init-db")
 async def initialize_database():
     init_database()

@@ -5,6 +5,8 @@ from app.auth import get_password_hash
 from dotenv import load_dotenv
 load_dotenv()
 
+print(">>> DEBUG: init_db.py is running")
+
 
 # Create tables
 Base.metadata.create_all(bind=engine)
