@@ -16,8 +16,8 @@ import json
 from typing import List, Optional
 import os
 from dotenv import load_dotenv
-
-
+from fastapi import FastAPI
+from app.init_db import init_database
 from app.models import User, Dataset, Model, Prediction, Feedback
 from app.schemas import *
 from app.auth import authenticate_user, create_access_token, get_current_user, get_password_hash, verify_password
@@ -27,10 +27,19 @@ from app.visualization import VisualizationService
 print("DEBUG MAIN: Base object imported:", Base) # Add this line to check Base object
 load_dotenv()
 
+
 # Create tables
 Base.metadata.create_all(bind=engine)
 
 app = FastAPI(title="Walmart Sales Analysis API", version="1.0.0")
+
+app = FastAPI()
+
+@app.post("/init-db")
+async def initialize_database():
+    init_database()
+    return {"message": "Database initialized"}
+
 
 # CORS middleware
 app.add_middleware(
